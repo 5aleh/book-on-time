@@ -3,7 +3,7 @@
 
 Team member's: 
 - Kamal Rimal 
--Sarah Swilley 
+- Sarah Swilley 
 - Saleh Alhassan 
 - Juan Martinez 
 - Viktoriya Rasuli
