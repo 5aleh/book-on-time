@@ -1,5 +1,5 @@
 # Project Title: 
-Terminal Reservation – Delta, Greyhound, Amtrak
+# Terminal Reservation – Delta, Greyhound, Amtrak
 
 Team member's: 
 - Kamal Rimal 
