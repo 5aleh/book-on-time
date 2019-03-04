@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS Link-->
+    <link href="main.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>SSJKV</title>
+    <style>
+         body {
+                background: #0B2C45;
+            }
+            * {box-sizing: border-box}
+
+            /* logout button */
+            .logoutLblPos{
+                position:fixed;
+                right:10px;
+                top:5px;
+            .loginLb
+             }
+
+            h1 {
+                color: white;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+            h2 {
+                color: white;
+                margin-bottom: 25px;
+                margin-bottom: 50px;
+            }
+
+            button {
+              width: 50%;
+              padding: 12px;
+              border: none;
+              border-radius: 4px;
+              margin: 5px 0;
+              opacity: 0.85;
+              display: inline-block;
+              font-size: 20px;
+              line-height: 20px;
+              text-decoration: none; /* remove underline from anchors */
+              margin-bottom: 25px;
+
+
+              }
+
+
+
+            /* style inputs and link buttons */
+            input,
+            .btn {
+              width: 100%;
+              padding: 12px;
+
+
+              border: none;
+              border-radius: 4px;
+              margin: 5px 0;
+              opacity: 0.85;
+              display: inline-block;
+              font-size: 17px;
+              line-height: 20px;
+              text-decoration: none; /* remove underline from anchors */
+            }
+
+            input:hover,
+            .btn:hover {
+              opacity: 1;
+            }
+
+            /* style the submit button */
+            input[type=submit] {
+              background-color: #4CAF50;
+              color: white;
+              cursor: pointer;
+            }
+
+
+            input[type=submit]:hover {
+              background-color: #45a049;
+            }
+
+            /* Two-column layout */
+            .col {
+              float: left;
+              width: 50%;
+              margin: auto;
+              padding: 0 50px;
+              margin-top: 6px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+
+            /* text inside the vertical line */
+            .inner {
+              position: absolute;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              background-color: #f1f1f1;
+              border: 1px solid #ccc;
+              border-radius: 50%;
+              padding: 8px 10px;
+            }
+
+            /* hide some text on medium and large screens */
+            .hide-md-lg {
+              display: none;
+            }
+
+            /* bottom container */
+            .bottom-container {
+              text-align: center;
+              background-color: #666;
+              border-radius: 0px 0px 4px 4px;
+            }
+
+            /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 650px) {
+              .col {
+                width: 100%;
+                margin-top: 0;
+              }
+              /* hide the vertical line */
+              .vl {
+                display: none;
+              }
+              /* show the hidden text on small screens */
+              .hide-md-lg {
+                display: block;
+                text-align: center;
+              }
+            }
+               img {
+                max-width: 100%;
+                height: auto;
+            }
+            /* Add a same color background to the top navigation */
+            .topnav {
+                background-color: #0E1114;
+                overflow: hidden;
+            }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+              float: left;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+              border-radius: 8px;
+            }
+
+            /* Change the color of links on hover */
+            .topnav a:hover {
+              background-color: red; /*#ddd*/
+              color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+              background-color: #4CAF50;
+              color: white;
+            }
+
+            /* Right-aligned section inside the top navigation */
+            .topnav-right {
+              float: right;
+            }
+
+    </style>
+
+</head>
+<body>
+<div class="topnav">
+    <!--<a class="active" href="#home">Home</a>-->
+
+
+    <div class="topnav-right">
+        <a href="Login.html">Login</a>
+        <a href="SignUp.html">Sign Up</a>
+    </div>
+</div>
+
+
+<center><h1>Welcome to Terminal Reservation!</h1></center>
+
+
+<!--Logout button-->
+<!--<form align="right" name="form1" method="post" action="log_out.php">
+    <label class="logoutLblPos">
+        <input name="submit2" type="submit" id="submit2" value="Log Out">
+    </label>
+</form>-->
+
+
+<h2 style="text-align:center">Would you like to flight, a bus, or a train?</h2>
+<center>
+    <button onclick="location.href='Flight.html'" type="button">
+        Flight
+    </button>
+    <button onclick="location.href='Bus.html'" type="button">
+        Bus
+    </button>
+    <button onclick="location.href='Train.html'" type="button">
+        Train
+    </button>
+</center>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<img src="http://www.whitebird.org/wp-content/uploads/Travel-womanArmsOutstretched-147079253.jpg">
+</body>
+</html>
