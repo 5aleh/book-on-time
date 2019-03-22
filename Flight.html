@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>SSJKV</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSS Link-->
     <link href="main.css" rel="stylesheet" type="text/css">
@@ -10,12 +11,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>SSJKV</title>
+
     <style>
-            body {
+             body {
                 background: #0B2C45;
             }
             * {box-sizing: border-box}
+
 
             /* logout button */
             .logoutLblPos{
@@ -23,24 +25,14 @@
                 right:10px;
                 top:5px;
              }
-            /* */
             h1 {
                 color: white;
-                margin-top: 25px;
-            }
-            h2 {
-                color: white;
-                margin-bottom: 25px;
-                margin-bottom: 25px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+
             }
 
-            /* style the container */
-            .container {
-              position: relative;
-              border-radius: 25px;
-              background-color: #f2f2f2;
-              padding: 20px 0 30px 0;
-            }
+           /* /* style the container -- can pull code from another page to use again */
 
             /* style inputs and link buttons */
             input,
@@ -122,13 +114,14 @@
               .vl {
                 display: none;
               }
+
               /* show the hidden text on small screens */
               .hide-md-lg {
                 display: block;
                 text-align: center;
               }
             }
-               img {
+              img {
                 max-width: 100%;
                 height: auto;
             }
@@ -136,43 +129,59 @@
     </style>
 </head>
 <body>
-<center><h1>Terminal Reservation</h1></center>
+<center><h1>Search Flights</h1></center>
 
 <!--Logout button-->
 <form align="right" name="form1" method="post" action="log_out.php">
     <label class="logoutLblPos">
         <input name="submit2" type="submit" id="submit2" value="Log out">
-
     </label>
 </form>
-
-<h2 style="text-align:center">Login</h2>
 
 <form action="/action_page.php" method="get">
     <center>
         <div class="container">
             <form action="/action_page.php">
                 <div class="row">
-                    <div class="col">
-                        <div class="hide-md-lg">
-                        </div>
-                        <input type="text" name="username" placeholder="Username" required>
-                        <input type="password" name="password" placeholder="Password" required>
-                        <form action="process_main.php" method="get">
-                            <input type="submit" formaction="MainPage.html" value="Login">
-                        </form>
 
+                    <div class="vl">
                     </div>
+
+                    <form class="form-inline">
+
+                        <div class="form-group">
+                            <label class="sr-only" for="inputFrom">Flying From</label>
+                            <input type="search" class="form-control" id="inputFrom" placeholder="Flying From">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="inputTo">Flying To</label>
+                            <input type="search" class="form-control" id="inputTo" placeholder="Flying To">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="inputDeparting">Departing</label>
+                            <input type="date" class="form-control" id="inputDeparting" placeholder="Departing">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="inputReturning">Returning</label>
+                            <input type="date" class="form-control" id="inputReturning" placeholder="Returning">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="inputAdults (18+)">Adults (18+)</label>
+                            <input type="number" class="form-control" id="inputAdults (18+)" placeholder="Adults (18+)">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="inputChildren (0-17)">Children (0-17)</label>
+                            <input type="number" class="form-control" id="inputChildren (0-17)" placeholder="Children (0-17)">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
 
                 </div>
             </form>
         </div>
 
-        <!--<div class="bottom-container">-->
-        <center><p href="#" style="color:white" class="btn">Not a member?<a href="SignUp.html" style="color:white"
-                                                                            class="btn">Sign up</a></p></center>
-        </div>
-    </center>
+
+
 </form>
 
 <img src="http://www.whitebird.org/wp-content/uploads/Travel-womanArmsOutstretched-147079253.jpg">
