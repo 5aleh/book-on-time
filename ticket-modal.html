@@ -1,0 +1,22 @@
+<!-- The Modal -->
+<div id="myModal" class="modal-header">
+
+  <!-- Modal content -->
+  <div class="modal-body">
+    <span class="close">&times;</span>
+    <img src="assets/img/FrontPage.jpg" style="width:100%">
+    <h1><center><font color="black">Congratulations</font></center></h1>
+    <p><center><font color="black">You have successfully reserved a ticket.</font></center></p>
+      <p>Your ticket number is # {{ticketNumber}}</p>
+      <p>Name: {{userTicketName}}</p>
+      <p>Phone: {{userTicketPhone}}</p>
+      <p>Email: {{userTicketEmail}}</p>
+      <p>Seat: {{selectedSeat}}</p>
+      <p>You can send ticket to your email address </p>
+    <button ng-click="sendTicket()" class="lol">Send ticket</button>
+    <p>OR</p>
+    <p>Print it here rightaway</p>
+    <button ng-click="printTicket()" class="lol">Print ticket</button>
+  </div>
+
+</div>

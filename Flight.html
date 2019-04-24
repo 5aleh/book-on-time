@@ -1,202 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" ng-controller="trainController">
 <head>
-    <meta charset="UTF-8">
-    <title>SSJKV</title>
-
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- CSS Link-->
-    <link href="main.css" rel="stylesheet" type="text/css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <style>
-             body {
-                background: #0B2C45;
-            }
-            * {box-sizing: border-box}
-
-
-            /* logout button */
-            .logoutLblPos{
-                position:fixed;
-                right:10px;
-                top:5px;
-             }
-            h1 {
-                color: white;
-                margin-top: 50px;
-                margin-bottom: 50px;
-
-            }
-
-           /* /* style the container -- can pull code from another page to use again */
-
-            /* style inputs and link buttons */
-            input,
-            .btn {
-              width: 100%;
-              padding: 12px;
-              border: none;
-              border-radius: 4px;
-              margin: 5px 0;
-              opacity: 0.85;
-              display: inline-block;
-              font-size: 17px;
-              line-height: 20px;
-              text-decoration: none; /* remove underline from anchors */
-            }
-
-            input:hover,
-            .btn:hover {
-              opacity: 1;
-            }
-
-            /* style the submit button */
-            input[type=submit] {
-              background-color: #4CAF50;
-              color: white;
-              cursor: pointer;
-            }
-
-            input[type=submit]:hover {
-              background-color: #45a049;
-            }
-
-            /* Two-column layout */
-            .col {
-              float: left;
-              width: 50%;
-              margin: auto;
-              padding: 0 50px;
-              margin-top: 6px;
-            }
-
-            /* Clear floats after the columns */
-            .row:after {
-              content: "";
-              display: table;
-              clear: both;
-            }
-
-            /* text inside the vertical line */
-            .inner {
-              position: absolute;
-              top: 50%;
-              transform: translate(-50%, -50%);
-              background-color: #f1f1f1;
-              border: 1px solid #ccc;
-              border-radius: 50%;
-              padding: 8px 10px;
-            }
-
-            /* hide some text on medium and large screens */
-            .hide-md-lg {
-              display: none;
-            }
-
-            /* bottom container */
-            .bottom-container {
-              text-align: center;
-              background-color: #666;
-              border-radius: 0px 0px 4px 4px;
-            }
-
-            /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-            @media screen and (max-width: 650px) {
-              .col {
-                width: 100%;
-                margin-top: 0;
-              }
-              /* hide the vertical line */
-              .vl {
-                display: none;
-              }
-
-              /* show the hidden text on small screens */
-              .hide-md-lg {
-                display: block;
-                text-align: center;
-              }
-            }
-              img {
-                max-width: 100%;
-                height: auto;
-            }
-
-    </style>
+	<meta name="author" content="ThemeStarz">
+	<title>Terminal reservation - Book Buses, Trains, and Flights</title>
 </head>
-<body>
-<center><h1>Search Flights</h1></center>
-
-<!--Logout button-->
-<form align="right" name="form1" method="post" action="log_out.php">
-    <label class="logoutLblPos">
-        <input name="submit2" type="submit" id="submit2" value="Log out">
-    </label>
-</form>
-
-<form action="/action_page.php" method="get">
-    <center>
-        <div class="container">
-            <form action="/action_page.php">
-                <div class="row">
-
-                    <div class="vl">
+  <body>
+    <div class="page home-page">
+            <!--*********************************************************************************************************-->
+            <!--************ HERO ***************************************************************************************-->
+            <!--*********************************************************************************************************-->
+            <header class="hero">
+                <div class="hero-wrapper">
+                    <!--============ Secondary Navigation ===============================================================-->
+                    <div class="secondary-navigation">
+                        <div class="container">
+                            <ul class="left">
+                                <li>
+                                <!-- <span> -->
+                                  <a href="#!">Home</a>
+                                <!-- </span> -->
+                                </li>
+                            </ul>
+                            <!--end left-->
+                            <ul class="right">
+    													<li ng-hide="signedIn">
+    															<a href="#!sign-in">
+    																	<i class="fa fa-sign-in"></i>{{userName}}
+    															</a>
+    													</li>
+    													<li ng-show="signedIn">
+    															<a href="#!">
+    																	<i class="fa fa-sign-in"></i>{{userName}}
+    															</a>
+    													</li>
+                                <li ng-hide="signedIn">
+                                    <a href="#!register">
+                                        <i class="fa fa-pencil-square-o"></i>Register
+                                    </a>
+                                </li>
+    														<li ng-click = "signOut()" ng-show="signedIn">
+                                    <a href="#!">
+                                        <i class="fa fa-sign-in"></i>Sign Out
+                                    </a>
+                                </li>
+    														<li ng-show="signedIn">
+                                    <a href="#!my-profile">
+                                        <i class="fa fa-pencil-square-o"></i>Profile
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--end right-->
+                        </div>
+                        <!--end container-->
                     </div>
+                    <!--============ End Secondary Navigation ===========================================================-->
+                    <!--============ Main Navigation ====================================================================-->
+                    <div class="main-navigation">
+                        <div class="container">
+                            <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                                <a class="navbar-brand" href="#!">
+                                    <img src="assets/img/Terlogo.png" alt="">
+                                </a>
+                                <!--end navbar-collapse-->
+                            </nav>
+                            <!--end navbar-->
+                        </div>
+                        <!--end container-->
+                    </div>
+                    <!--============ End Main Navigation ================================================================-->
+                    <!--============ Page Title =========================================================================-->
+                    <div class="page-title" style="padding: 0px">
+                        <div class="container">
+                            <h1 class="center">
+                                Book Flights
+                            </h1>
+                        </div>
+                        <!--end container-->
+                    </div>
+                    <!--============ End Page Title =====================================================================-->
+                    <!--============ Hero Form ==========================================================================-->
 
-                    <form class="form-inline">
-
-                        <div class="form-group">
-                            <label class="sr-only" for="inputFrom">Flying From</label>
-                            <input type="search" class="form-control" id="inputFrom" placeholder="Flying From">
+                    <!--============ End Hero Form ======================================================================-->
+                    <div class="background">
+                        <div class="background-image original-size">
+                            <img src="assets/img/hero-background-icons.jpg" alt="">
                         </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="inputTo">Flying To</label>
-                            <input type="search" class="form-control" id="inputTo" placeholder="Flying To">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="inputDeparting">Departing</label>
-                            <input type="date" class="form-control" id="inputDeparting" placeholder="Departing">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="inputReturning">Returning</label>
-                            <input type="date" class="form-control" id="inputReturning" placeholder="Returning">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="inputAdults (18+)">Adults (18+)</label>
-                            <input type="number" class="form-control" id="inputAdults (18+)" placeholder="Adults (18+)">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="inputChildren (0-17)">Children (0-17)</label>
-                            <input type="number" class="form-control" id="inputChildren (0-17)" placeholder="Children (0-17)">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-
+                        <!--end background-image-->
+                    </div>
+                    <!--end background-->
                 </div>
-            </form>
-        </div>
+                <!--end hero-wrapper-->
+            </header>
+            <!--end hero-->
 
+    				<!--*********************************************************************************************************-->
+            <!--************ CONTENT ************************************************************************************-->
+            <!--*********************************************************************************************************-->
+    	<section class="content">
+    		<section class="block">
+          <div class="tripbod">
+          	<div class="container">
+              <div id="products" class="row list-group">
+                <div ng-repeat="trip in flight_trips" class="item list-group-item">
+                  <div class="thumbnail">
+          					<div class="row">
+          						<div class="col-md-2">
+                        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+          						</div>
+          						<div class="col-md">
+                        <div class="caption row">
+          								<div class="col-md">
+          									<div class="row">
+          										<div class="col-md">
+          											<span class="col-md">Flight</span> <span class="col-md"></span>
+          										</div>
+          										<div class="col-md">
+          											<span class="col-md"> {{trip.departure_time}} </span> - <span class="col-md"> {{trip.arrival_time}}</span>
+          										</div>
+          									</div>
+          									<div class="row">
+          										<div class="col-md">
+          											<span class="col-md-5">From:</span> <span class="col-md">To:</span>
+          										</div>
+          										<div class="col-md">
+          											<span class="col-md">Price: </span> <span class="col-md">${{trip.price}}</span>
+          										</div>
+          									</div>
+          									<div class="row">
+          										<div class="col-md">
+          											<span class="col-md-5"> {{trip.location_from}} </span> <span class="col-md"> {{trip.location_to}}</span>
+          										</div>
+          										<div class="col-md">
+          											<span class="col-md">Total seats: </span> <span class="col-md">{{trip.total_seats}}</span>
+          										</div>
+          									</div>
 
-
-</form>
-
-<img src="http://www.whitebird.org/wp-content/uploads/Travel-womanArmsOutstretched-147079253.jpg">
-
-<a href="mainPage.html"></a>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
+          								</div>
+                        </div>
+          						</div>
+          						<div class="col-md-auto">
+          							<button class="btn btn-success btn-item" ng-click="bookFlightTrip(trip)">Book</button>
+          						</div>
+          					</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
 </html>

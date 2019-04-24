@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" ng-controller="trainController">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="ThemeStarz">
+	<title>Terminal reservation - Book Buses, Trains, and Flights</title>
+</head>
+  <body>
+    <div class="page home-page">
+            <!--*********************************************************************************************************-->
+            <!--************ HERO ***************************************************************************************-->
+            <!--*********************************************************************************************************-->
+            <header class="hero">
+                <div class="hero-wrapper">
+                    <!--============ Secondary Navigation ===============================================================-->
+                    <div class="secondary-navigation">
+                        <div class="container">
+                            <ul class="left">
+                                <li>
+                                <!-- <span> -->
+                                  <a href="#!">Home</a>
+                                <!-- </span> -->
+                                </li>
+                            </ul>
+                            <!--end left-->
+                            <ul class="right">
+    													<li ng-hide="signedIn">
+    															<a href="#!sign-in">
+    																	<i class="fa fa-sign-in"></i>{{userName}}
+    															</a>
+    													</li>
+    													<li ng-show="signedIn">
+    															<a href="#!">
+    																	<i class="fa fa-sign-in"></i>{{userName}}
+    															</a>
+    													</li>
+                                <li ng-hide="signedIn">
+                                    <a href="#!register">
+                                        <i class="fa fa-pencil-square-o"></i>Register
+                                    </a>
+                                </li>
+    														<li ng-click = "signOut()" ng-show="signedIn">
+                                    <a href="#!">
+                                        <i class="fa fa-sign-in"></i>Sign Out
+                                    </a>
+                                </li>
+    														<li ng-show="signedIn">
+                                    <a href="#!my-profile">
+                                        <i class="fa fa-pencil-square-o"></i>Profile
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--end right-->
+                        </div>
+                        <!--end container-->
+                    </div>
+                    <!--============ End Secondary Navigation ===========================================================-->
+                    <!--============ Main Navigation ====================================================================-->
+                    <div class="main-navigation">
+                        <div class="container">
+                            <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                                <a class="navbar-brand" href="#!">
+                                    <img src="assets/img/Terlogo.png" alt="">
+                                </a>
+                                <!--end navbar-collapse-->
+                            </nav>
+                            <!--end navbar-->
+                        </div>
+                        <!--end container-->
+                    </div>
+                    <!--============ End Main Navigation ================================================================-->
+                    <!--============ Page Title =========================================================================-->
+                    <div class="page-title" style="padding: 0px">
+                        <div class="container">
+                            <h1 class="center">
+                                Book Trains
+                            </h1>
+                        </div>
+                        <!--end container-->
+                    </div>
+                    <!--============ End Page Title =====================================================================-->
+                    <!--============ Hero Form ==========================================================================-->
+
+                    <!--============ End Hero Form ======================================================================-->
+                    <div class="background">
+                        <div class="background-image original-size">
+                            <img src="assets/img/hero-background-icons.jpg" alt="">
+                        </div>
+                        <!--end background-image-->
+                    </div>
+                    <!--end background-->
+                </div>
+                <!--end hero-wrapper-->
+            </header>
+            <!--end hero-->
+
+    				<!--*********************************************************************************************************-->
+            <!--************ CONTENT ************************************************************************************-->
+            <!--*********************************************************************************************************-->
+    	<section class="content">
+    		<section class="block">
+          <div class="tripbod">
+          	<div class="container">
+              <div id="products" class="row list-group">
+                <div ng-repeat="trip in train_trips" class="item list-group-item">
+                  <div class="thumbnail">
+          					<div class="row">
+          						<div class="col-md-2">
+                        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+          						</div>
+          						<div class="col-md">
+                        <div class="caption row">
+          								<div class="col-md">
+          									<div class="row">
+          										<div class="col-md">
+          											<span class="col-md">Train</span> <span class="col-md"></span>
+          										</div>
+          										<div class="col-md">
+          											<span class="col-md"> {{trip.departure_time}} </span> - <span class="col-md"> {{trip.arrival_time}}</span>
+          										</div>
+          									</div>
+          									<div class="row">
+          										<div class="col-md">
+          											<span class="col-md-4">From:</span> <span class="col-md">To:</span>
+          										</div>
+          										<div class="col-md">
+          											<span class="col-md">Price: </span> <span class="col-md">${{trip.price}}</span>
+          										</div>
+          									</div>
+          									<div class="row">
+          										<div class="col-md">
+          											<span class="col-md-4"> {{trip.location_from}} </span> <span class="col-md"> {{trip.location_to}}</span>
+          										</div>
+          										<div class="col-md">
+          											<span class="col-md">Total seats: </span> <span class="col-md">{{trip.total_seats}}</span>
+          										</div>
+          									</div>
+
+          								</div>
+                        </div>
+          						</div>
+          						<div class="col-md-auto">
+          							<button class="btn btn-success btn-item" ng-click="bookTrainTrip(trip)">Book</button>
+          						</div>
+          					</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en" ng-controller="profileController">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="ThemeStarz">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Varela+Round" rel="stylesheet">
+
+	<title>Craigs - Easy Buy & Sell Listing HTML Template</title>
+
+</head>
+<body>
+	<!-- Some Test: {{userName}} <input ng-model="test" /> -->
+    <div class="page sub-page">
+        <!--*********************************************************************************************************-->
+        <!--************ HERO ***************************************************************************************-->
+        <!--*********************************************************************************************************-->
+        <header class="hero">
+            <div class="hero-wrapper">
+                <!--============ Secondary Navigation ===============================================================-->
+                <div class="secondary-navigation">
+                    <div class="container">
+                        <ul class="left">
+                            <li>
+                            <!-- <span> -->
+															<a href="#!">Home</a>
+                            <!-- </span> -->
+                            </li>
+                        </ul>
+                        <!--end left-->
+                        <ul class="right">
+                            <li>
+                                <a href="#!my-profile">
+                                    <i class="fa fa-sign-in"></i>{{userName}}
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="#!register">
+                                    <i class="fa fa-pencil-square-o"></i>Register
+                                </a>
+                            </li> -->
+														<li ng-click = "signOut()" ng-show="signedIn">
+                                <a href="#!">
+                                    <i class="fa fa-sign-in"></i>Sign Out
+                                </a>
+                            </li>
+                        </ul>
+                        <!--end right-->
+                    </div>
+                    <!--end container-->
+                </div>
+                <!--============ End Secondary Navigation ===========================================================-->
+								<div class="main-navigation">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                            <a class="navbar-brand" href="#!">
+                                <img src="assets/img/Terlogo.png" alt="">
+                            </a>
+                        </nav>
+                        <!--end navbar-->
+                    </div>
+                    <!--end container-->
+                </div>
+                <!--============ Page Title =========================================================================-->
+                <div class="page-title">
+                    <div class="container">
+                        <h1 class="opacity-40 center">My Profile</h1>
+                    </div>
+                    <!--end container-->
+                </div>
+                <!--============ End Page Title =====================================================================-->
+                <div class="background"></div>
+                <!--end background-->
+            </div>
+            <!--end hero-wrapper-->
+        </header>
+        <!--end hero-->
+
+        <!--*********************************************************************************************************-->
+        <!--************ CONTENT ************************************************************************************-->
+        <!--*********************************************************************************************************-->
+        <section class="content">
+            <section class="block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <nav class="nav flex-column side-nav">
+                                <!-- <a class="nav-link active icon" href="#!my-profile">
+                                    <i class="fa fa-user"></i>My Profile
+                                </a>
+                                <a class="nav-link icon" href="#!my-ads">
+                                    <i class="fa fa-heart"></i>My Ads Listing
+                                </a> -->
+                                <a class="nav-link icon" href="#!change-password">
+                                    <i class="fa fa-recycle"></i>Change Password
+                                </a>
+                            </nav>
+                        </div>
+                        <!--end col-md-3-->
+                        <div class="col-md-9">
+                            <form ng-submit = "userUpdate()" class="form">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h2>Personal Information</h2>
+                                        <section>
+                                            <div class="row">
+                                                <!-- <div class="col-md-4"> -->
+                                                    <!-- <div class="form-group">
+                                                        <label for="title" class="col-form-label">Title</label>
+                                                        <select name="title" id="title" data-placeholder="Title">
+                                                            <option value="">Title</option>
+                                                            <option value="1" selected>Mrs</option>
+                                                            <option value="2">Mr</option>
+                                                        </select>
+                                                    </div> -->
+                                                    <!--end form-group-->
+                                                <!-- </div> -->
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <label for="name" class="col-form-label required">Your Name</label>
+                                                        <input ng-model="userName" name="name" type="text" class="form-control" id="name" placeholder="Your Name" value="Name" required>
+                                                    </div>
+                                                    <!--end form-group-->
+                                                </div>
+                                                <!--end col-md-8-->
+                                            </div>
+                                            <!--end row-->
+
+                                            <!--end form-group-->
+                                            <!-- <div class="form-group">
+                                                <label for="about" class="col-form-label">More About You</label>
+                                                <textarea ng-model="userDescription" name="about" id="about" class="form-control" rows="4"></textarea>
+                                            </div> -->
+                                            <!--end form-group-->
+                                        </section>
+
+                                        <section>
+                                            <h2>Contact</h2>
+                                            <div class="form-group">
+                                                <label for="phone" class="col-form-label">Phone</label>
+                                                <input ng-model="userPhone" name="phone" type="text" class="form-control" id="phone" placeholder="Your Phone" value="312-238-3329">
+                                            </div>
+                                            <!--end form-group-->
+                                            <div class="form-group">
+                                                <label for="email" class="col-form-label">Email</label>
+                                                <input ng-model="userEmail" name="email" type="email" class="form-control" id="email" placeholder="Your Email" value="example@gmail.com">
+                                            </div>
+                                            <!--end form-group-->
+                                        </section>
+
+                                        <section>
+                                            <!-- <h2>Social</h2>
+                                            <div class="form-group">
+                                                <label for="twitter" class="col-form-label">Twitter</label>
+                                                <input name="twitter" type="text" class="form-control" id="twitter" placeholder="http://" value="http://www.twitter.com/jane.doe">
+                                            </div> -->
+                                            <!--end form-group-->
+                                            <!-- <div class="form-group">
+                                                <label for="facebook" class="col-form-label">Facebook</label>
+                                                <input name="facebook" type="text" class="form-control" id="facebook" placeholder="http://" value="http://www.facebook.com/jane.doe">
+                                            </div> -->
+                                            <!--end form-group-->
+                                        </section>
+
+                                        <section class="clearfix">
+                                            <button type="submit" class="btn btn-primary float-right">Save Changes</button>
+                                        </section>
+                                    </div>
+                                    <!--end col-md-8-->
+                                    <!-- <div class="col-md-4">
+                                        <div class="profile-image">
+                                            <div class="image background-image">
+                                                <img src="assets/img/author-09.jpg" alt="">
+                                            </div> -->
+                                            <!-- <div class="single-file-input">
+                                                <input type="file" id="user_image" name="user_image">
+                                                <div class="btn btn-framed btn-primary small">Upload a picture</div>
+                                            </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                    <!--end col-md-3-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--end block-->
+        </section>
+        <!--end content-->
+    </div>
+    <!--end page-->
+
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&libraries=places"></script>
+	<script src="assets/js/selectize.min.js"></script>
+	<script src="assets/js/masonry.pkgd.min.js"></script>
+	<script src="assets/js/icheck.min.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
